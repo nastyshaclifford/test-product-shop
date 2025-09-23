@@ -165,11 +165,11 @@ export default function EditProductPage() {
           <button 
             type="button" 
             onClick={() => navigate(`/products/${product.id}`)}
-            className="btn btn-outline-secondary"
+            className="btn btn-outline-dark px-4 py-2"
           >
             Отмена
           </button>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-dark border-0 px-4 py-2">
             Сохранить изменения
           </button>
         </div>

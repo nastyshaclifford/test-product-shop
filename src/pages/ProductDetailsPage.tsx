@@ -1,9 +1,10 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../hooks/redux';
 import { ArrowLeft, Heart, Star } from 'lucide-react';
 
-export default function ProductDetailPage() {
+export default function ProductDetailsPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const product = useAppSelector((state) =>
     state.products.items.find((item) => item.id === id)
   );
@@ -62,9 +63,13 @@ export default function ProductDetailPage() {
                 </span>
               </div>
 
-              <button className="btn btn-dark px-5 py-3 border-0 w-100" style={{ letterSpacing: '1px' }}>
+              <button 
+                    onClick={() => navigate(`/edit-product/${product.id}`)}
+                    className="btn btn-dark px-5 py-3 border-0 w-100" 
+                    style={{ letterSpacing: '1px' }}
+                    >
                 РЕДАКТИРОВАТЬ
-              </button>
+                </button>
             </div>
           </div>
         </div>
