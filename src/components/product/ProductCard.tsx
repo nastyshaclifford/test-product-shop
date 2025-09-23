@@ -16,12 +16,14 @@ export default function ProductCard({ product }: ProductCardProps) {
     dispatch(toggleLike(product.id));
   };
 
+  const handleCardClick = () => navigate(`/products/${product.id}`);
+
   const handleRemove = (e: React.MouseEvent) => {
     e.stopPropagation();
-    dispatch(removeProduct(product.id));
-  };
-
-  const handleCardClick = () => navigate(`/products/${product.id}`);
+    if (window.confirm('Вы уверены, что хотите удалить этот товар?')) {
+      dispatch(removeProduct(product.id));
+    }
+  };  
 
   return (
     <div className="col">

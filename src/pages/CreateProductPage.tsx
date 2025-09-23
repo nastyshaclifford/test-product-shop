@@ -17,13 +17,13 @@ export default function CreateProductPage() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }));
+        setErrors((prev) => ({ ...prev, [name]: '' }));
     }
-  };
+};
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -59,7 +59,6 @@ export default function CreateProductPage() {
     <div className="container-fluid py-5 bg-light min-vh-100">
       <div className="row justify-content-center">
         <div className="col-lg-6">
-          {/* Заголовок и кнопка назад */}
           <div className="d-flex align-items-center mb-5">
             <button 
               onClick={() => navigate('/products')} 
@@ -108,6 +107,27 @@ export default function CreateProductPage() {
                 />
                 {errors.description && <div className="invalid-feedback">{errors.description}</div>}
               </div>
+
+              <div className="mb-4">
+                <label htmlFor="category" className="form-label fw-light text-dark">
+                    Категория *
+                </label>
+                <select
+                    id="category"
+                    name="category"
+                    value={formData.category}
+                    onChange={handleChange}
+                    className="form-select border-1 px-3 py-2"
+                    style={{ borderRadius: '0' }}
+                >
+                    <option value="electronics">Электроника</option>
+                    <option value="clothing">Одежда</option>
+                    <option value="home">Дом</option>
+                    <option value="beauty">Красота</option>
+                    <option value="sports">Спорт</option>
+                    <option value="custom">Другое</option>
+                </select>
+                </div>
 
               <div className="mb-4">
                 <label htmlFor="price" className="form-label fw-light text-dark" style={{ letterSpacing: '0.5px' }}>
