@@ -2,12 +2,15 @@ import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Product } from '../types/product';
 
+export type SortOption = 'default' | 'price_asc' | 'price_desc' | 'name_asc' | 'name_desc' | 'rating';
+
 interface ProductsState {
     items: Product[];
     filter: 'all' | 'liked';
     status: 'idle' | 'loading' | 'succeeded' | 'failed';
     error: string | null;
     searchQuery: string;
+    sortBy: SortOption;
 }
 
 const initialState: ProductsState = {
@@ -16,6 +19,7 @@ const initialState: ProductsState = {
     status: 'idle',
     error: null,
     searchQuery: '',
+    sortBy: 'default',
 };
 
 interface DummyJsonProduct {
@@ -92,6 +96,9 @@ export const productsSlice = createSlice({
             state.items[index] = action.payload;
             }
         },
+        setSortBy: (state, action: PayloadAction<SortOption>) => {
+            state.sortBy = action.payload;
+        },    
         
     },
     extraReducers: (builder) => {
@@ -110,5 +117,5 @@ export const productsSlice = createSlice({
     },
 });
 
-export const { addProduct, removeProduct, toggleLike, setFilter, setSearchQuery, updateProduct } = productsSlice.actions;
+export const { addProduct, removeProduct, toggleLike, setFilter, setSearchQuery, updateProduct, setSortBy } = productsSlice.actions;
 export default productsSlice.reducer;
