@@ -7,10 +7,11 @@ import FilterButtons from '../components/product/FilterButtons';
 import ProductGrid from '../components/product/ProductGrid';
 import Pagination from '../components/ui/Pagination';
 import EmptyState from '../components/ui/EmptyState';
+import SearchBar from '../components/product/SearchBar';
 
 export default function ProductsPage() {
     const dispatch = useAppDispatch();
-    const { items, filter, status, error } = useAppSelector((state) => state.products);
+    const { items, filter, status, error, searchQuery } = useAppSelector((state) => state.products);
 
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 8;
@@ -21,7 +22,12 @@ useEffect(() => {
     }
 }, [status, dispatch]);
 
-    const filteredProducts = filter === 'liked' ? items.filter(p => p.isLiked) : items;
+const filteredProducts = items.filter(product => {
+    const matchesFilter = filter === 'all' || product.isLiked;
+    const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    product.description.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesFilter && matchesSearch;
+});
 
     const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
     const paginatedItems = filteredProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
@@ -52,6 +58,8 @@ return (
         filter={filter} 
         onFilterChange={handleFilterChange} 
     />
+
+    <SearchBar />
 
     {paginatedItems.length === 0 ? (
         <EmptyState filter={filter} />

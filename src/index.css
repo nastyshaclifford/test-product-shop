@@ -78,6 +78,40 @@
   border-width: 1px;
 }
 
+.search-bar-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-icon {
+  color: #6c757d;
+  transition: color 0.3s ease;
+  z-index: 10;
+}
+
+.search-input {
+  border-radius: 50px;
+  border: 1px solid #dee2e6;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #1A1A1A;
+  box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.1);
+}
+
+.search-input:hover {
+  border-color: #adb5bd;
+}
+
+.search-input:focus + .search-icon,
+.search-input:not(:placeholder-shown) + .search-icon {
+  color: #1A1A1A;
+}
+
+
 
 
 
