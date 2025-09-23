@@ -1,0 +1,85 @@
+:root {
+  --gold: #D4AF37;
+  --dark-gold: #B8860B;
+  --light-gold: #F8E9A1;
+  --dark: #1A1A1A;
+  --light: #F8F9FA;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.border-gold {
+  border-color: var(--gold);
+}
+
+.btn-gold {
+  background-color: var(--gold);
+  color: var(--dark);
+  border: 1px solid var(--gold);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: var(--dark-gold);
+  border-color: var(--dark-gold);
+  color: var(--light);
+}
+
+.card {
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.display-4 {
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.btn {
+  border-radius: 0;
+  transition: all 0.3s ease;
+  font-weight: 300;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.badge {
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  border-radius: 0;
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.border-1 {
+  border-width: 1px;
+}
+
+
+
+
+
+
