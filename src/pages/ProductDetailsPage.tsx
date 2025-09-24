@@ -1,13 +1,21 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { useAppSelector } from '../hooks/redux';
+import { useAppSelector, useAppDispatch } from '../hooks/redux';
+import { toggleLike } from '../store/productSlice';
 import { ArrowLeft, Heart, Star } from 'lucide-react';
 
 export default function ProductDetailsPage() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const product = useAppSelector((state) =>
     state.products.items.find((item) => item.id === id)
   );
+
+  const handleToggleLike = () => {
+    if (product) {
+      dispatch(toggleLike(product.id));
+    }
+  };
 
   if (!product) {
     return (
@@ -52,15 +60,29 @@ export default function ProductDetailsPage() {
                 </span>
               </div>
 
-              <div className="h3 fw-light text-dark mb-4">{product.price.toFixed(2)} ₽</div>
+              <div className="h3 fw-light text-dark mb-4">{product.price.toFixed(2)}</div>
 
               <p className="text-muted mb-4 fw-light" style={{ lineHeight: '1.6' }}>{product.description}</p>
 
               <div className="mb-4">
-                <span className={`badge px-3 py-2 ${product.isLiked ? 'bg-gold text-dark' : 'bg-light text-dark border-1'}`} style={{ fontSize: '12px' }}>
-                  {product.isLiked ? <Heart className="me-2" size={14} fill="currentColor" /> : null}
+                <button 
+                  onClick={handleToggleLike}
+                  className={`btn border-1 d-flex align-items-center ${
+                    product.isLiked ? 'border-gold bg-gold text-dark' : 'border-dark bg-white text-dark'
+                  }`}
+                  style={{ 
+                    borderRadius: '25px',
+                    padding: '0.5rem 1rem',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <Heart 
+                    className="me-2" 
+                    size={16} 
+                    fill={product.isLiked ? "currentColor" : "none"}
+                  />
                   {product.isLiked ? 'В избранном' : 'Добавить в избранное'}
-                </span>
+                </button>
               </div>
 
               <button 

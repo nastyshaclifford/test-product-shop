@@ -101,7 +101,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </p>
 
           <div className="mt-auto d-flex justify-content-between align-items-center">
-            <span className="h5 text-dark fw-light mb-0">{product.price.toFixed(2)} ₽</span>
+            <span className="h5 text-dark fw-light mb-0">{product.price.toFixed(2)} $ </span>
             <button className="btn btn-outline-dark border-1 px-3 py-2" style={{ fontSize: '12px' }}>
               Подробнее
             </button>

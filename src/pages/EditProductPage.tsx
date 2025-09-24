@@ -107,7 +107,7 @@ export default function EditProductPage() {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Цена *</label>
+          <label className="form-label">Цена ($) *</label>
           <input
             name="price"
             type="number"

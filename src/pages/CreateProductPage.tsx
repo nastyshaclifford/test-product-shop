@@ -71,7 +71,6 @@ export default function CreateProductPage() {
             </h1>
           </div>
 
-          {/* Форма */}
           <div className="card border-0 bg-white p-5">
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
@@ -131,7 +130,7 @@ export default function CreateProductPage() {
 
               <div className="mb-4">
                 <label htmlFor="price" className="form-label fw-light text-dark" style={{ letterSpacing: '0.5px' }}>
-                  Цена ₽ *
+                  Цена *
                 </label>
                 <input
                   id="price"
