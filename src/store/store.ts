@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import productsReducer from './productSlice';
 import { loadState, saveState } from '../utils/localStorage';
 
-// Убираем тип из импорта, создаем интерфейс прямо здесь
 interface AppState {
   products: ReturnType<typeof productsReducer>;
 }

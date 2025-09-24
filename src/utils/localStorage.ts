@@ -1,4 +1,3 @@
-// Упрощаем без импорта типов
 export const loadState = () => {
     try {
       const serializedState = localStorage.getItem('productAppState');

@@ -36,7 +36,6 @@ interface DummyJsonProduct {
     images: string[];
 }
 
-
 export const fetchProducts = createAsyncThunk(
     'products/fetchProducts',
     async () => {
@@ -51,8 +50,8 @@ export const fetchProducts = createAsyncThunk(
             image: product.thumbnail,
             isLiked: false,
             rating: {
-                rate: product.rating, // предполагая, что API возвращает число
-                count: 0 // или product.reviewsCount или другое поле
+                rate: product.rating, 
+                count: 0 
             },
             category: product.category
         }));

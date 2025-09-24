@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Убрал точку после BrowserRouter
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import ProductsPage from "./pages/ProductPage";
 import ProductDetailPage from "./pages/ProductDetailsPage";
 import CreateProductPage from './pages/CreateProductPage';
-import EditProductPage from './pages/EditProductPage'; // Добавить импорт
+import EditProductPage from './pages/EditProductPage'; 
 import Layout from './components/layout/Layout';
 
 function App() {

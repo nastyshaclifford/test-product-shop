@@ -27,7 +27,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
     return (
         <nav className="mt-5" aria-label="Навигация по страницам">
             <ul className="pagination justify-content-center flex-wrap">
-                {/* Кнопка "Назад" */}
                 <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
                     <button 
                         className="page-link border-0 bg-transparent text-dark px-3 px-sm-4 py-2" 

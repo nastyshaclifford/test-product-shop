@@ -8,8 +8,8 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
   const handleToggleLike = (e: React.MouseEvent) => {
     e.stopPropagation();
