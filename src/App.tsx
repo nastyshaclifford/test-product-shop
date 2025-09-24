@@ -10,7 +10,7 @@ import Layout from './components/layout/Layout';
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/test-product-shop">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<ProductsPage />} />
