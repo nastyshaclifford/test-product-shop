@@ -60,7 +60,7 @@ export default function ProductDetailsPage() {
                 </span>
               </div>
 
-              <div className="h3 fw-light text-dark mb-4">{product.price.toFixed(2)}</div>
+              <div className="h3 fw-light text-dark mb-4">{product.price.toFixed(2)} $</div>
 
               <p className="text-muted mb-4 fw-light" style={{ lineHeight: '1.6' }}>{product.description}</p>
 
