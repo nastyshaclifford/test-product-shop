@@ -6,7 +6,7 @@ export const loadState = () => {
       }
       return JSON.parse(serializedState);
     } catch (err) {
-      console.error('Error loading state from localStorage:', err);
+      console.error('Ошибка при загрузке состояния из localStorage:', err);
       return undefined;
     }
   };
@@ -16,6 +16,6 @@ export const loadState = () => {
       const serializedState = JSON.stringify(state);
       localStorage.setItem('productAppState', serializedState);
     } catch (err) {
-      console.error('Error saving state to localStorage:', err);
+      console.error('Ошибка при сохранении состояния в localStorage:', err);
     }
   };
