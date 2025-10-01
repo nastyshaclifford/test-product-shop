@@ -18,8 +18,15 @@
 - **Сортировка** - По названию, цене, рейтингу
 - **Пагинация** - По 8 товаров на странице
 - **Сохранение данных** - Данные сохраняются после перезагрузки
+## Скриншоты 
 
-## Стек
+<img width="1440" height="757" alt="Снимок раздела "Избранное" " src="https://github.com/user-attachments/assets/5c785276-dfad-46a3-b365-673ead48eb17" />
+
+<img width="1440" height="757" alt="Снимок главного экрана" src="https://github.com/user-attachments/assets/178c4340-f6ca-45a9-bb59-d5f4b72847c7" />
+
+<img width="1440" height="757" alt="Снимок корзины" src="https://github.com/user-attachments/assets/9a0d1163-44b1-4d37-9ba1-fcad751bd602" />
+
+## Технологии
 - React 18 + TypeScript
 - Redux
 - React Router v6
@@ -28,6 +35,16 @@
 - Lucide React
 - Fetch API
 - localStorage
+
+## Структура проекта
+src/
+├── components/    # React компоненты
+├── pages/         # Страницы приложения
+├── store/         # Redux store
+├── hooks/         # Кастомные хуки
+├── types/         # TypeScript типы
+├── utils/         # Вспомогательные функции
+└── styles/        # Стили и CSS
 
 ## Как запустить проект
 
@@ -41,4 +58,17 @@
 ```bash
 git clone https://github.com/nastyshaclifford/test-product-shop.git
 cd test-product-shop
+```
 
+2. Установка зависимостей
+```bash
+npm install
+```
+3. Запуск в режиме разработки
+```bash
+npm run dev
+```
+### Доступ к приложению
+
+После успешного запуска приложение будет доступно:
+Локально: http://localhost:5173
