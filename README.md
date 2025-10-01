@@ -20,7 +20,7 @@
 - **Сохранение данных** - Данные сохраняются после перезагрузки
 ## Скриншоты 
 
-<img width="1440" height="757" alt="Снимок раздела "Избранное" " src="https://github.com/user-attachments/assets/5c785276-dfad-46a3-b365-673ead48eb17" />
+<img width="1440" height="757" alt="Снимок раздела Избранное" src="https://github.com/user-attachments/assets/f3946261-76da-4f6e-bd57-4cde17fced3d" />
 
 <img width="1440" height="757" alt="Снимок главного экрана" src="https://github.com/user-attachments/assets/178c4340-f6ca-45a9-bb59-d5f4b72847c7" />
 
@@ -35,16 +35,6 @@
 - Lucide React
 - Fetch API
 - localStorage
-
-## Структура проекта
-src/
-├── components/    # React компоненты
-├── pages/         # Страницы приложения
-├── store/         # Redux store
-├── hooks/         # Кастомные хуки
-├── types/         # TypeScript типы
-├── utils/         # Вспомогательные функции
-└── styles/        # Стили и CSS
 
 ## Как запустить проект
 
